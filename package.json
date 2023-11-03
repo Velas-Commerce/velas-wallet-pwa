@@ -9,7 +9,8 @@
     "build:notification": "cd packages/notification-component && bun run build",
     "build:scanner": "cd packages/scanner-component && bun run build",
     "build": "bun run build:app && bun run build:ldk && bun run build:nav && bun run build:modal && bun run build:notification && bun run build:scanner",
-    "dev:app": "cd packages/app && bun run dev"
+    "dev": "cd packages/app && bun run dev",
+    "preview": "cd packages/app && bun run preview"
   },
   "workspaces": [
     "./packages/*"
