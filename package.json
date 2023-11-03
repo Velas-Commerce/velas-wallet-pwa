@@ -10,7 +10,8 @@
     "build:scanner": "cd packages/scanner-component && bun run build",
     "build": "bun run build:app && bun run build:ldk && bun run build:nav && bun run build:modal && bun run build:notification && bun run build:scanner",
     "dev": "cd packages/app && bun run dev",
-    "preview": "cd packages/app && bun run preview"
+    "preview": "cd packages/app && bun run preview",
+    "deploy": "cd packages/app && bun run deploy"
   },
   "workspaces": [
     "./packages/*"
