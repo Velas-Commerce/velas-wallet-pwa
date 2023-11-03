@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
-    "preview": "bunx --bun vite preview"
+    "preview": "bunx --bun vite preview",
+    "deploy": "sudo rsync -av --delete dist/ /var/www/wallet"
   },
   "dependencies": {
     "solid-js": "^1.7.8"
