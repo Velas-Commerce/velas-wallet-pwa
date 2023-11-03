@@ -1,0 +1,16 @@
+{
+  "name": "velas-wallet",
+  "type": "module",
+  "scripts": {
+    "build:app": "cd packages/app && bun run build",
+    "build:ldk": "cd packages/ldk-node-wasm && bun run build",
+    "build:nav": "cd packages/nav-component && bun run build",
+    "build:modal": "cd packages/modal-component && bun run build",
+    "build:notification": "cd packages/notification-component && bun run build",
+    "build:scanner": "cd packages/scanner-component && bun run build",
+    "build": "bun run build:app && bun run build:ldk && bun run build:nav && bun run build:modal && bun run build:notification && bun run build:scanner"
+  },
+  "workspaces": [
+    "./packages/*"
+  ]
+}

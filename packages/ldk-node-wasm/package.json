@@ -1,0 +1,8 @@
+{
+  "name": "ldk-node-wasm",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "cargo build"
+  }
+}
