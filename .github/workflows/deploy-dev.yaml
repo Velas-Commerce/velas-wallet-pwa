@@ -10,7 +10,10 @@ jobs:
       - uses: oven-sh/setup-bun@v1 
       - run: bun install 
       - run: bun run build:app 
-      - run: bun run deploy
+      - name: Set up known hosts
+        run: echo "$KNOWN_HOSTS" >> ~/.ssh/known_hosts
+      - name: Run scp
+        run: bun run deploy
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         continue-on-error: true
