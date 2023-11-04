@@ -7,13 +7,12 @@
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
     "preview": "bunx --bun vite preview",
-    "deploy": "sudo rsync -av --delete dist/ /var/www/wallet"
+    "deploy": "scp -r dist ruahman@68.183.18.108:/var/www/wallet"
   },
   "dependencies": {
     "solid-js": "^1.7.8"
   },
   "devDependencies": {
-    "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-solid": "^2.7.0"
   }
