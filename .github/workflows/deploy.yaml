@@ -14,7 +14,7 @@ jobs:
         run: | 
           echo -e "${{ secrets.SSH_PRIVATE_KEY }}" >__TEMP_INPUT_KEY_FILE
           chmod 600 __TEMP_INPUT_KEY_FILE
-          scp -o StrictHostKeyChecking=no -v -i __TEMP_INPUT_KEY_FILE -P 22 -r ./packages/app/dist ruahman@68.183.18.108:/var/www/wallet
+          scp -o StrictHostKeyChecking=no -i __TEMP_INPUT_KEY_FILE -P 22 -r ./packages/app/dist ruahman@68.183.18.108:/var/www/wallet
       # - name: Set up known hosts
       #   run: |
       #     mkdir -p ~/.ssh
