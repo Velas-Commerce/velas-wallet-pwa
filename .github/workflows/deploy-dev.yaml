@@ -11,7 +11,11 @@ jobs:
       - run: bun install 
       - run: bun run build:app 
       - name: Set up known hosts
-        run: echo "$KNOWN_HOSTS" >> ~/.ssh/known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          touch ~/.ssh/known_hosts
+          echo "$KNOWN_HOSTS" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
       - name: Run scp
         run: bun run deploy
         env:
