@@ -24,12 +24,9 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          touch ~/.ssh/known_hosts
-          ssh-keygen -f "$HOME/.ssh/known_hosts" -R "68.183.18.108"
           chmod 700 ~/.ssh 
           chmod 600 ~/.ssh/id_rsa 
-          chmod 644 ~/.ssh/known_hosts
 
       - name: scp to ruahman.net
         run: | 
-          scp -o UserKnownHostsFile="$HOME/.ssh/known_hosts" -P 22 -r ./packages/app/dist/* root@68.183.18.108:/var/www/wallet
+          scp -o StrictHostKeyChecking=no -r ./packages/app/dist/* root@68.183.18.108:/var/www/wallet
