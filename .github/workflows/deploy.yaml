@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          echo "$KNOWN_HOSTS" >> ~/.ssh/known_hosts
+          ssh-keygen -f “~/.ssh/known_hosts” -R “68.183.18.108”
           chmod 700 ~/.ssh 
           chmod 600 ~/.ssh/id_rsa 
           chmod 644 ~/.ssh/known_hosts
