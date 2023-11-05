@@ -7,7 +7,7 @@
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
     "preview": "bunx --bun vite preview",
-    "deploy": "scp -pr dist root@68.183.18.108:/var/www/wallet"
+    "deploy": "scp -o StrictHostKeyChecking=no -pr dist/* root@68.183.18.108:/var/www/wallet"
   },
   "dependencies": {
     "solid-js": "^1.7.8"
