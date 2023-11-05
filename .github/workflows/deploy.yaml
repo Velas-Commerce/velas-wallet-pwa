@@ -27,6 +27,6 @@ jobs:
           chmod 700 ~/.ssh 
           chmod 600 ~/.ssh/id_rsa 
 
-      - name: scp to ruahman.net
-        run: | 
-          scp -o StrictHostKeyChecking=no -r ./packages/app/dist/* root@68.183.18.108:/var/www/wallet
+      - name: deploy to ruahman.net
+        run: bun run deploy 
+
