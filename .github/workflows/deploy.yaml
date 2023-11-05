@@ -20,7 +20,7 @@ jobs:
       - name: build app
         run: bun run build:app 
       
-      - name: Set up ssh
+      - name: set up ssh
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
