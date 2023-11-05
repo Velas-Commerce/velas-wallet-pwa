@@ -20,8 +20,13 @@ jobs:
       - name: build app
         run: bun run build:app 
       
+      - name: Set up ssh
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh 
+          chmod 600 ~/.ssh/id_rsa 
+
       - name: scp to ruahman.net
         run: | 
-          echo -e "${{ secrets.SSH_PRIVATE_KEY }}" > __TEMP_INPUT_KEY_FILE
-          chmod 600 __TEMP_INPUT_KEY_FILE
-          scp -o StrictHostKeyChecking=no -i __TEMP_INPUT_KEY_FILE -P 22 -r ./packages/app/dist/* root@68.183.18.108:/var/www/wallet
+          scp -o StrictHostKeyChecking=no -P 22 -r ./packages/app/dist/* root@68.183.18.108:/var/www/wallet
