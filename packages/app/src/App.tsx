@@ -4,7 +4,7 @@ function App() {
 
   return (
       <div>
-        <h1>Hello, welcome to Velas Wallet</h1>
+        <h1>Hello, Welcome to Velas Wallet</h1>
       </div>
   )
 }
