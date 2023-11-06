@@ -7,13 +7,17 @@
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
     "preview": "bunx --bun vite preview",
-    "deploy": "scp -o StrictHostKeyChecking=no -pr dist/* root@68.183.18.108:/var/www/wallet"
+    "deploy": "scp -o StrictHostKeyChecking=no -pr dist/* root@68.183.18.108:/var/www/wallet",
+    "test": "vitest --run" 
   },
   "dependencies": {
     "solid-js": "^1.7.8"
   },
   "devDependencies": {
     "vite": "^4.4.5",
-    "vite-plugin-solid": "^2.7.0"
+    "vite-plugin-solid": "^2.7.0",
+    "vitest": "^0.34.6",
+    "@solidjs/testing-library": "^0.8.4",
+    "happy-dom": "^12.10.3"
   }
 }
