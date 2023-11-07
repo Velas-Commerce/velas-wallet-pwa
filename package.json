@@ -12,7 +12,8 @@
     "dev": "cd packages/app-spa && bun run dev",
     "preview": "cd packages/app-spa && bun run preview",
     "deploy": "cd packages/app-spa && bun run deploy",
-    "test": "cd packages/app-spa && bun run test"
+    "test": "cd packages/app-spa && bun run test",
+    "chrome": "cd packages/app-spa && bun run chrome"
   },
   "workspaces": [
     "./packages/*"

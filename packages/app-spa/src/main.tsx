@@ -1,9 +1,14 @@
 /* @refresh reload */
-import { render } from 'solid-js/web'
-import './styles.css'
+import { render } from "solid-js/web";
+import "./styles.css";
+import App from "./App";
 
-import App from './App'
+const root = document.getElementById("app");
 
-const root = document.getElementById('app')
+render(() => <App />, root!);
 
-render(() => <App />, root!)
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").then(() => {
+    console.log("Service Worker Registered");
+  });
+}
